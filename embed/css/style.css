@@ -1,3 +1,78 @@
+/* 漢堡按鈕（桌機隱藏） */
+.nav-toggle{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+  padding:10px;
+}
+
+/* 三條線 */
+.nav-toggle span{
+  display:block;
+  height:2px;
+  margin:6px 0;
+  background:var(--text);
+  border-radius:2px;
+}
+
+/* 手機版：隱藏 menu，用按鈕控制展開 */
+@media (max-width: 768px){
+  .nav{
+    align-items:center;
+  }
+
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .menu{
+    display:none;              /* 預設收起 */
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(255,255,255,.03);
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .menu a{
+    margin-left:0;             /* 移除你原本的 margin-left */
+    font-size:14px;
+    padding:10px 12px;
+    border-radius:12px;
+  }
+
+  .menu a:hover{
+    background:rgba(255,255,255,.06);
+  }
+
+  /* 展開狀態：由 JS 加上 .menu-open */
+  .nav.menu-open .menu{
+    display:flex;
+  }
+
+  /* 展開時：把漢堡變 X（可選） */
+  .nav.menu-open .nav-toggle span:nth-child(1){
+    transform:translateY(8px) rotate(45deg);
+  }
+  .nav.menu-open .nav-toggle span:nth-child(2){
+    opacity:0;
+  }
+  .nav.menu-open .nav-toggle span:nth-child(3){
+    transform:translateY(-8px) rotate(-45deg);
+  }
+  .nav-toggle span{
+    transition:transform .18s ease, opacity .18s ease;
+  }
+}
 :root{
   --bg:#0b0f14;
   --panel:#0f1620;
@@ -106,5 +181,46 @@ footer{
     margin-left:0;
     font-size:14px;
     white-space:nowrap; /* ✅ 避免單個連結自己斷行造成更亂 */
+
+
+  }
+}
+
+/* ================================
+   Mobile Hamburger Menu (final)
+   ================================ */
+@media (max-width: 768px){
+  nav[aria-label="Primary"]{ position:relative; }
+
+  /* 預設收起 */
+  #navList{ display:none; }
+
+  /* 展開後（JS 會加 open） */
+  #navList.open{
+    display:flex;
+    position:absolute;
+    right:0;
+    top:calc(100% + 10px);
+    width:min(92vw,360px);
+    flex-direction:column;
+    gap:6px;
+    padding:10px;
+    margin:0;
+    list-style:none;
+    background:rgba(8,12,18,.95);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    z-index:2000;
+  }
+
+  #navList a{
+    display:block;
+    padding:12px;
+    border-radius:12px;
+  }
+
+  #navList a:hover{
+    background:rgba(255,255,255,.06);
   }
 }
