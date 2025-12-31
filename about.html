@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>關於擺渡人 | 擺渡人 FUNERAL SERVICES</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&amp;family=Noto+Sans+TC:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+    :root{
+      --primary:#141414;
+      --accent:#a67c52;      /* warm gold-brown */
+      --text:#2f2f2f;
+      --muted:#6f6f6f;
+
+      /* premium warm base (reduce “too white”) */
+      --bg:#f6f1ea;
+      --panel:#fbf8f4;
+      --soft:#f2ece4;
+
+      --border:rgba(20,20,20,.10);
+      --shadow: 0 18px 45px rgba(15,15,15,.10);
+      --shadow-soft: 0 8px 20px rgba(15,15,15,.06);
+
+      --radius:16px;
+      --max:1100px;
+
+      --nav-h:72px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ animation:none !important; transition:none !important; }
+    }
+
+    /* Utilities */
+    .container{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+    }
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      padding:10px 14px; background:#fff; border:1px solid var(--border);
+      border-radius:10px; z-index:9999;
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(251,248,244,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(166,124,82,.22);
+    }
+    .nav{
+      height:var(--nav-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .brand__name{
+      font-weight:700;
+      letter-spacing:.08em;
+      color:var(--primary);
+      font-size:1.05rem;
+    }
+    .brand__sub{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.8rem;
+      color:var(--muted);
+      letter-spacing:.08em;
+    }
+
+    .nav__right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      flex:1;
+      min-width:0;
+    }
+
+    .lang-btn{
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.85rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .lang-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    .menu-btn{
+      display:none;
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.9rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .menu-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:14px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+    nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.9rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+      padding: 8px 2px;
+    }
+    nav a:hover{ color:var(--accent); }
+
+          nav ul{
+      list-style:none;
+      display:flex;
+      gap:14px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+      nav ul.open{ display:flex; }
+      nav li{ width:100%; }
+      nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.9rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+      padding: 8px 2px;
+    }
+    }
+
+    /* Sections */
+    main{ padding-top: 0; }
+    section{
+      padding: clamp(64px, 7vw, 110px) 0;
+    }
+    h1,h2,h3{ margin:0 0 12px 0; color:var(--primary); }
+    h2{
+      text-align:center;
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      letter-spacing:.06em;
+      margin-bottom: 28px;
+    }
+    .lead{
+      font-family:"Noto Sans TC", sans-serif;
+      color:var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* Hero */
+    
+    
+    .hero{
+      --hero-bg: url("images/logo.png");
+
+      min-height: 60vh;
+      max-height: 680px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.55) 100%),
+        radial-gradient(800px 400px at 50% 30%, rgba(166,124,82,.18), transparent 60%),
+        var(--hero-bg);
+
+      background-size: cover;
+      background-position: center;
+    }
+
+.hero__inner{
+      padding: 40px 0;
+      text-align:center;
+    }
+ .hero__title{
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  letter-spacing: .18em;
+  color:#fff;
+    }
+    
+
+    
+    .hero__tagline{
+      font-family:\"Noto Sans TC\", sans-serif;
+      color: rgba(255,255,255,.86);
+      margin: 10px 0 0 0;
+      letter-spacing:.06em;
+      font-size: 1rem;
+    }
+/* About */
+    .about{
+      background: transparent;
+    }
+    .about__card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .about__p{
+      margin: 0 0 14px 0;
+    }
+    .bilingual{
+      display:block;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color: #8a8a8a;
+      margin-top: 6px;
+    }
+    .emphasis{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-weight:700;
+    }
+
+    /* Packages */
+    .packages{
+      background: linear-gradient(180deg, rgba(166,124,82,.06), rgba(0,0,0,0) 55%);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(166,124,82,.40);
+      box-shadow: var(--shadow);
+    }
+    .media{
+      height: 260px;
+      background:#eee;
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+      transition: transform .25s ease;
+    }
+    .card:hover .media img{ transform: scale(1.06); }
+
+    .card__body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    .card__title{
+      font-size:1.18rem;
+      margin-bottom: 8px;
+    }
+    .card__subtitle{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color:var(--muted);
+      margin-bottom: 16px;
+    }
+    .list{
+      text-align:left;
+      padding-left: 18px;
+      margin: 0 0 16px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.95rem;
+    }
+    .price{
+      color:var(--accent);
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      font-size:1.4rem;
+      margin: 14px 0 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .quote{
+      font-family:"Noto Sans TC", sans-serif;
+      color:#666;
+      margin: 10px 0 0 0;
+    }
+
+    /* Contact */
+    .contact{
+      background: transparent;
+    }
+    .contact__box{
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      text-align:center;
+      box-shadow: var(--shadow-soft);
+    }
+    .contact__item{
+      margin: 0 0 14px 0;
+      font-family:"Noto Sans TC", sans-serif;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top: 10px;
+
+      background: linear-gradient(180deg, rgba(166,124,82,1), rgba(140,104,70,1));
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 22px;
+      border-radius: 999px;
+
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      letter-spacing:.04em;
+      box-shadow: 0 16px 35px rgba(166,124,82,.22);
+
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .cta:hover{ transform: translateY(-2px); filter: brightness(.98); }
+
+    /* Footer */
+    footer{
+      background:var(--primary);
+      color:#bdbdbd;
+      padding: 46px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.88rem;
+      text-align:center;
+    }
+  
+
+/* About Page */
+.page-hero{
+  min-height: 46vh;
+  max-height: 520px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.58) 100%),
+    radial-gradient(900px 420px at 50% 20%, rgba(166,124,82,.20), transparent 60%),
+    url("images/0001");
+  background-size: cover;
+  background-position: center;
+}
+.page-hero__inner{
+  padding: 48px 0;
+  text-align:center;
+}
+.kicker{
+  font-family:"Noto Sans TC", sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.page-title{
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing:.14em;
+  margin:0;
+  color:#fff;
+}
+.page-sub{
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(255,255,255,.86);
+  margin: 14px auto 0;
+  max-width: 52ch;
+  font-size: 1rem;
+  letter-spacing:.06em;
+}
+
+.prose{
+  max-width: 900px;
+  margin: 0 auto;
+}
+.prose p{
+  margin: 0 0 16px 0;
+  font-size: 1.02rem;
+}
+.pull{
+  margin: 26px auto 0;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(166,124,82,.24);
+  background: rgba(251,248,244,.78);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.divider{
+  height:1px;
+  background: rgba(20,20,20,.08);
+  margin: 28px 0;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  align-items:stretch;
+  margin-top: 26px;
+}
+.photo-grid.alt{
+  grid-template-columns: .8fr 1.2fr;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .photo-grid, .photo-grid.alt{ grid-template-columns: 1fr; }
+}
+
+.photo-card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+.photo-card img{
+  width:100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display:block;
+}
+.caption{
+  padding: 14px 16px 16px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  font-size:.95rem;
+}
+
+.side-note{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+  padding: 18px 18px 16px;
+  height: 100%;
+}
+.side-note h3{
+  font-size: 1.05rem;
+  margin: 0 0 10px 0;
+  letter-spacing:.08em;
+}
+.side-note ul{
+  margin:0;
+  padding-left: 18px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--text);
+}
+.side-note li{ margin: 8px 0; color: rgba(20,20,20,.74); }
+
+
+/* Subtle section rhythm */
+section + section{
+  border-top: 1px solid rgba(20,20,20,.05);
+}
+
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header>
+<div class="container nav">
+<a aria-label="擺渡人 Funeral Services" class="brand" href="#home">
+<img alt="擺渡人 Logo" src="images/logo.png" style="height:42px;"/>
+</a>
+<div class="nav__right">
+<button aria-label="Language toggle" class="lang-btn" id="langBtn" type="button">
+          中 / EN
+        </button>
+<button aria-controls="navList" aria-expanded="false" class="menu-btn" data-en="Menu" data-zh="選單" id="menuBtn" type="button">選單</button>
+<nav aria-label="Primary">
+<ul id="navList">
+<li><a data-en="Home" data-zh="首頁" href="index.html">首頁</a></li>
+<li><a data-en="About" data-zh="關於擺渡人" href="about.html">關於擺渡人</a></li>
+<li><a data-en="Funeral Overview" data-zh="喪禮簡介" href="funeral-intro.html">喪禮簡介</a></li>
+<li><a data-en="The Final Journey" data-zh="最後一程" href="last-journey.html">最後一程</a></li>
+<li><a data-en="Services" data-zh="服務項目" href="services.html">服務項目</a></li>
+<li><a data-en="Our Daily Work" data-zh="擺渡人日常" href="daily.html">擺渡人日常</a></li>
+<li><a data-en="Contact" data-zh="聯絡" href="contact.html">聯絡</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<main id="main">
+<!-- PAGE HERO -->
+<section aria-label="關於擺渡人" class="page-hero">
+<div class="container page-hero__inner">
+<div class="kicker" data-en="ABOUT" data-zh="關於">ABOUT</div>
+<h1 class="page-title" data-en="About the Ferryman" data-zh="關於擺渡人">關於擺渡人</h1>
+<p class="page-sub" data-en="All our lives, we keep moving forward. Yet at the very end, we all need someone to see us on our way." data-zh="人終其一生，都在前行。只是走到最後，總需要有人送一程。">人終其一生，都在前行。只是走到最後，總需要有人送一程。</p>
+</div>
+</section>
+<!-- STORY -->
+<section aria-label="品牌理念" class="about">
+<div class="container">
+<div class="about__card">
+<div class="prose">
+<p data-en="“The Ferryman” is not a job title, but a role—standing on the shore in quiet steadiness, never rushing, only accompanying when needed." data-zh="「擺渡人」不是一個職稱，而是一種站在岸邊的角色——不喧嘩、不催促，只在需要的時候，陪著走過去。">「擺渡人」不是一個職稱，而是一種站在岸邊的角色——不喧嘩、不催促，只在需要的時候，陪著走過去。</p>
+<p data-en="We have witnessed countless goodbyes—some quiet, some hurried; some filled with words, some with none at all. Whatever the form, that moment is equally real, equally weighty." data-zh="我們見過太多告別。有些安靜，有些倉促；有些說了很多話，有些一句也沒說。但無論形式如何，那一刻都同樣真實、同樣沉重。">我們見過太多告別。有些安靜，有些倉促；有些說了很多話，有些一句也沒說。但無論形式如何，那一刻都同樣真實、同樣沉重。</p>
+<p data-en="In moments like these, people don’t need to be told how to grieve, nor pushed to “get it over with.” What they need is someone with measure—knowing when to step forward, and when to take a step back." data-zh="在這樣的時刻，人不需要被指導該怎麼悲傷，也不需要被提醒要「趕快處理完」。人需要的是一個知道分寸的人，知道什麼時候該站前面，什麼時候該退後一步。">在這樣的時刻，人不需要被指導該怎麼悲傷，也不需要被提醒要「趕快處理完」。人需要的是一個知道分寸的人，知道什麼時候該站前面，什麼時候該退後一步。</p>
+<div class="divider"></div>
+<p data-en="What we do is simply take on what must be carried—so families don’t have to decide in the midst of chaos, and so the farewell can be slower, steadier." data-zh="擺渡人所做的，只是把該承擔的事接過來。讓家屬不必在混亂中做決定，讓告別可以慢一點、穩一點。">擺渡人所做的，只是把該承擔的事接過來。讓家屬不必在混亂中做決定，讓告別可以慢一點、穩一點。</p>
+<p data-en="We believe a farewell does not end a relationship; it is a way of closing it with care." data-zh="我們相信，告別不是結束關係，而是替一段關係，好好收尾。">我們相信，告別不是結束關係，而是替一段關係，好好收尾。</p>
+<p data-en="It doesn’t have to be grand, but it should be honest; it doesn’t have to be perfect, but it should honor the life that was lived." data-zh="它不必盛大，但應該誠實；不必完美，但要對得起那一生。">它不必盛大，但應該誠實；不必完美，但要對得起那一生。</p>
+<p data-en="We do not define anyone’s grief, nor decide anyone’s way. We stay alongside—making sure this last stretch is never rushed or treated lightly." data-zh="擺渡人不替任何人定義悲傷，也不替任何人決定方式。我們只是在旁，確保這一程路，不被草率帶過。">擺渡人不替任何人定義悲傷，也不替任何人決定方式。我們只是在旁，確保這一程路，不被草率帶過。</p>
+<div class="pull" data-en="So that those who leave may go in peace; and those who remain may have a place in the heart to lay their longing—this is why the Ferryman exists." data-zh="讓離開的人，走得平穩；讓留下的人，心裡有一個可以安放思念的位置。這，就是擺渡人存在的原因。">讓離開的人，走得平穩；讓留下的人，心裡有一個可以安放思念的位置。這，就是擺渡人存在的原因。</div>
+</div>
+</div>
+<!-- PHOTO SLOT 1 + NOTE -->
+<div class="photo-grid">
+<figure class="photo-card">
+<img alt="擺渡人｜照片位置 1" src="images/0002"/>
+<figcaption class="caption" data-en="(Photo slot 1) Replace with: &lt;code&gt;images/0002&lt;/code&gt;" data-html="1" data-zh="（照片位置 1）你可替換：&lt;code&gt;images/0002&lt;/code&gt;">（照片位置 1）你可替換：<code>images/0002</code></figcaption>
+</figure>
+<aside aria-label="我們的態度" class="side-note">
+<h3 data-en="Our Approach" data-zh="我們的態度">我們的態度</h3>
+<ul>
+<li data-en="No rushing the process—only making sure everything is done steadily." data-zh="不催促流程，只把事情做穩。">不催促流程，只把事情做穩。</li>
+<li data-en="No taking the spotlight—leaving space for the family." data-zh="不喧賓奪主，把空間留給家屬。">不喧賓奪主，把空間留給家屬。</li>
+<li data-en="Catching the details—so the farewell feels grounded and calm." data-zh="把細節接住，讓告別更安定。">把細節接住，讓告別更安定。</li>
+</ul>
+</aside>
+</div>
+<!-- PHOTO SLOT 2 + CLOSING -->
+<div class="photo-grid alt">
+<aside aria-label="一句話" class="side-note">
+<h3 data-en="In a Sentence" data-zh="一句話">一句話</h3>
+<p data-en="Some paths must be walked to the end.&lt;br&gt;Some people deserve to be seen off with care." data-html="1" data-zh="有些路，終究要走完。&lt;br/&gt;有些人，值得被好好送行。" style="margin:0; font-family:'Noto Sans TC', sans-serif; color: rgba(20,20,20,.74);">
+              有些路，終究要走完。<br/>有些人，值得被好好送行。
+            </p>
+</aside>
+<figure class="photo-card">
+<img alt="擺渡人｜照片位置 2" src="images/0003"/>
+<figcaption class="caption" data-en="(Photo slot 2) Replace with: &lt;code&gt;images/0003&lt;/code&gt;" data-html="1" data-zh="（照片位置 2）你可替換：&lt;code&gt;images/0003&lt;/code&gt;">（照片位置 2）你可替換：<code>images/0003</code></figcaption>
+</figure>
+</div>
+<!-- OPTIONAL PHOTO SLOT 3 (kept minimal) -->
+<div style="max-width:900px; margin: 22px auto 0;">
+<div class="photo-card">
+<img alt="擺渡人｜照片位置 3" src="images/0001"/>
+<div class="caption" data-en="(Photo slot 3) Replace with: &lt;code&gt;images/0001&lt;/code&gt; (also used as the page-hero background)" data-html="1" data-zh="（照片位置 3）你可替換：&lt;code&gt;images/0001&lt;/code&gt;（此張也同時用作頁首背景）">（照片位置 3）你可替換：<code>images/0001</code>（此張也同時用作頁首背景）</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div data-en="© 2025 The Ferryman Funeral Services. All rights reserved." data-zh="© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。">© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。</div>
+<div data-en="Professional life-ceremony services" data-zh="專業生命禮儀服務" style="margin-top:8px;">專業生命禮儀服務</div>
+</div>
+</footer>
+<script>
+
+    (function(){
+      const navList = document.getElementById("navList");
+      const menuBtn = document.getElementById("menuBtn");
+      const langBtn = document.getElementById("langBtn");
+
+      // Mobile menu toggle
+      function setMenu(open){
+        navList.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+      }
+
+      menuBtn?.addEventListener("click", () => {
+        const isOpen = navList.classList.contains("open");
+        setMenu(!isOpen);
+      });
+
+      // Close menu on link click (mobile)
+      navList?.addEventListener("click", (e) => {
+        const target = e.target;
+        if(target && target.tagName === "A"){
+          setMenu(false);
+        }
+      });
+
+      // Language toggle (default zh-Hant)
+      let current = "zh";
+      function applyLang(lang){
+        current = lang;
+        document.documentElement.lang = (lang === "zh") ? "zh-Hant" : "en";
+
+        const nodes = document.querySelectorAll("[data-zh][data-en]");
+        nodes.forEach(el => {
+          const val = el.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+          const htmlMode = el.hasAttribute("data-html");
+          if(htmlMode){
+            el.innerHTML = val;
+          }else{
+            el.textContent = val;
+          }
+        });
+
+        // Update button label
+        langBtn.textContent = (lang === "zh") ? "中 / EN" : "EN / 中";
+      }
+
+      langBtn?.addEventListener("click", () => {
+        applyLang(current === "zh" ? "en" : "zh");
+      });
+
+      applyLang("zh");
+    })();
+  
+  </script>
+</body>
+</html>

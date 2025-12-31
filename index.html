@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>擺渡人 FUNERAL SERVICES | 讓離去的人走得安然</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#141414;
+      --accent:#a67c52;      /* warm gold-brown */
+      --text:#2f2f2f;
+      --muted:#6f6f6f;
+
+      /* premium warm base (reduce “too white”) */
+      --bg:#f6f1ea;
+      --panel:#fbf8f4;
+      --soft:#f2ece4;
+
+      --border:rgba(20,20,20,.10);
+      --shadow: 0 18px 45px rgba(15,15,15,.10);
+      --shadow-soft: 0 8px 20px rgba(15,15,15,.06);
+
+      --radius:16px;
+      --max:1100px;
+
+      --nav-h:72px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ animation:none !important; transition:none !important; }
+    }
+
+    /* Utilities */
+    .container{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+    }
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      padding:10px 14px; background:#fff; border:1px solid var(--border);
+      border-radius:10px; z-index:9999;
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(251,248,244,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(166,124,82,.22);
+    }
+    .nav{
+      height:var(--nav-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .brand__name{
+      font-weight:700;
+      letter-spacing:.08em;
+      color:var(--primary);
+      font-size:1.05rem;
+    }
+    .brand__sub{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.8rem;
+      color:var(--muted);
+      letter-spacing:.08em;
+    }
+
+    .nav__right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      flex:1;
+      min-width:0;
+    }
+
+    .lang-btn{
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.85rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .lang-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    .menu-btn{
+      display:none;
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.9rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .menu-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:16px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.92rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+    }
+    nav a:hover{ color:var(--accent); }
+
+    /* Mobile menu */
+    @media (max-width: 1100px){
+      .menu-btn{ display:inline-flex; }
+      nav ul{
+      list-style:none;
+      display:flex;
+      gap:16px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+      nav ul.open{ display:flex; }
+      nav li{ width:100%; }
+      nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.92rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+    }
+    }
+
+    /* Sections */
+    main{ padding-top: 0; }
+    section{
+      padding: clamp(64px, 7vw, 110px) 0;
+    }
+    h1,h2,h3{ margin:0 0 12px 0; color:var(--primary); }
+    h2{
+      text-align:center;
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      letter-spacing:.06em;
+      margin-bottom: 28px;
+    }
+    .lead{
+      font-family:"Noto Sans TC", sans-serif;
+      color:var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* Hero */
+    
+    
+    .hero{
+      --hero-bg: url("images/logo.png");
+
+      min-height: 60vh;
+      max-height: 680px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.55) 100%),
+        radial-gradient(800px 400px at 50% 30%, rgba(166,124,82,.18), transparent 60%),
+        var(--hero-bg);
+
+      background-size: cover;
+      background-position: center;
+    }
+
+.hero__inner{
+      padding: 40px 0;
+      text-align:center;
+    }
+ .hero__title{
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  letter-spacing: .18em;
+  color:#fff;
+    }
+    
+
+    
+    .hero__tagline{
+      font-family:\"Noto Sans TC\", sans-serif;
+      color: rgba(255,255,255,.86);
+      margin: 10px 0 0 0;
+      letter-spacing:.06em;
+      font-size: 1rem;
+    }
+/* About */
+    .about{
+      background: transparent;
+    }
+    .about__card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .about__p{
+      margin: 0 0 14px 0;
+    }
+    .bilingual{
+      display:block;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color: #8a8a8a;
+      margin-top: 6px;
+    }
+    .emphasis{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-weight:700;
+    }
+
+    /* Packages */
+    .packages{
+      background: linear-gradient(180deg, rgba(166,124,82,.06), rgba(0,0,0,0) 55%);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(166,124,82,.40);
+      box-shadow: var(--shadow);
+    }
+    .media{
+      height: 260px;
+      background:#eee;
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+      transition: transform .25s ease;
+    }
+    .card:hover .media img{ transform: scale(1.06); }
+
+    .card__body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    .card__title{
+      font-size:1.18rem;
+      margin-bottom: 8px;
+    }
+    .card__subtitle{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color:var(--muted);
+      margin-bottom: 16px;
+    }
+    .list{
+      text-align:left;
+      padding-left: 18px;
+      margin: 0 0 16px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.95rem;
+    }
+    .price{
+      color:var(--accent);
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      font-size:1.4rem;
+      margin: 14px 0 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .quote{
+      font-family:"Noto Sans TC", sans-serif;
+      color:#666;
+      margin: 10px 0 0 0;
+    }
+
+    /* Contact */
+    .contact{
+      background: transparent;
+    }
+    .contact__box{
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      text-align:center;
+      box-shadow: var(--shadow-soft);
+    }
+    .contact__item{
+      margin: 0 0 14px 0;
+      font-family:"Noto Sans TC", sans-serif;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top: 10px;
+
+      background: linear-gradient(180deg, rgba(166,124,82,1), rgba(140,104,70,1));
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 22px;
+      border-radius: 999px;
+
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      letter-spacing:.04em;
+      box-shadow: 0 16px 35px rgba(166,124,82,.22);
+
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .cta:hover{ transform: translateY(-2px); filter: brightness(.98); }
+
+    /* Footer */
+    footer{
+      background:var(--primary);
+      color:#bdbdbd;
+      padding: 46px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.88rem;
+      text-align:center;
+    }
+  
+/* Subtle section rhythm */
+section + section{
+  border-top: 1px solid rgba(20,20,20,.05);
+}
+</style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-zh="跳到主要内容" data-en="Skip to main content">跳到主要内容</a>
+
+  <header>
+    <div class="container nav">
+    <a class="brand" href="#home" aria-label="擺渡人 Funeral Services">
+  <img src="images/logo.png" alt="擺渡人 Logo" style="height:42px;">
+</a>
+
+      <div class="nav__right">
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Language toggle">
+          中 / EN
+        </button>
+
+        <button class="menu-btn" id="menuBtn" type="button" aria-controls="navList" aria-expanded="false"
+          data-zh="選單" data-en="Menu">選單</button>
+
+        <nav aria-label="Primary">
+          <ul id="navList">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於擺渡人</a></li>
+            <li><a href="funeral-intro.html">喪禮簡介</a></li>
+            <li><a href="last-journey.html">最後一程</a></li>
+            <li><a href="services.html">服務項目</a></li>
+            <li><a href="daily.html">擺渡人日常</a></li>
+            <li><a href="contact.html">聯絡</a></li>
+</ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title" data-zh="擺渡人" data-en="The Ferryman">擺渡人</h1>
+        <p class="hero__tagline" data-zh="人生一程，終須一別" data-en="Every journey ends with a farewell.">
+          人生一程，終須一別
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 data-zh="品牌故事" data-en="Our Story">品牌故事</h2>
+
+        <div class="about__card">
+          <p class="about__p">
+            <span data-zh="「擺渡人」取意於送行者——在最後一程，替家屬把關每個細節。" 
+                  data-en='"The Ferryman" represents the guide for a final journey—handling every detail with care.'>
+              「擺渡人」取意於送行者——在最後一程，替家屬把關每個細節。
+            </span>
+          </p>
+
+          <p class="about__p">
+            <span data-zh="我們相信：每一個生命都值得被溫柔對待；每一次告別，都應當被尊重。" 
+                  data-en="We believe every life deserves gentleness, and every farewell deserves dignity.">
+              我們相信：每一個生命都值得被溫柔對待；每一次告別，都應當被尊重。
+            </span>
+          </p>
+
+          <p class="about__p">
+            <span data-zh="在至親最脆弱的時刻，我們不只是提供服務，更是陪伴家屬完成告別。" 
+                  data-en="In the most fragile moments, we do more than provide services—we accompany families through the farewell.">
+              在至親最脆弱的時刻，我們不只是提供服務，更是陪伴家屬完成告別。
+            </span>
+          </p>
+
+          <p class="about__p">
+            <span data-zh="把繁瑣交給我們，把心意留下：讓離去的人走得安然，讓留下的人能夠放心。" 
+                  data-en="Leave the complexities to us—so the departed may rest in peace, and the living may find comfort.">
+              把繁瑣交給我們，把心意留下：讓離去的人走得安然，讓留下的人能夠放心。
+            </span>
+          </p>
+
+          <p class="about__p emphasis">
+            <span data-zh="慎終追遠，是一份責任；好好告別，是對一生的尊重。" 
+                  data-en="Honoring the end is a responsibility; a proper farewell is respect for a lifetime.">
+              慎終追遠，是一份責任；好好告別，是對一生的尊重。
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="packages" id="packages">
+      <div class="container">
+        <h2 data-zh="服務配套" data-en="Service Packages">服務配套</h2>
+        <p class="lead" style="text-align:center"
+           data-zh="依需求與預算提供三種禮儀方案，流程清楚、安排有序。"
+           data-en="Three structured options tailored to different needs and budgets—clear process, orderly arrangements.">
+          依需求與預算提供三種禮儀方案，流程清楚、安排有序。
+        </p>
+
+        <div class="grid" style="margin-top:26px;">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="media">
+              <img src="images/安行配套.png" alt="安行配套 Peaceful Passage">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-zh="安行配套" data-en="Peaceful Passage">安行配套</h3>
+              <div class="card__subtitle" data-zh="以平實之禮，送行一程" data-en="A simple, dignified farewell.">
+                以平實之禮，送行一程
+              </div>
+              <ul class="list">
+                <li data-zh="實用型棺木" data-en="Practical casket">實用型棺木</li>
+                <li data-zh="基本送行流程" data-en="Basic procession workflow">基本送行流程</li>
+                <li data-zh="安排清晰有序" data-en="Clear and orderly arrangements">安排清晰有序</li>
+                <li data-zh="適合低調儀式" data-en="Suitable for a low-profile rite">適合低調儀式</li>
+              </ul>
+              <div class="price">RM 6,888</div>
+              <p class="quote" data-zh="“以平實之禮，送行一程。”" data-en="“A simple rite for a meaningful journey.”">
+                “以平實之禮，送行一程。”
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="media">
+              <img src="images/園理配套.png" alt="圓禮配套 Complete Rite">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-zh="圓禮配套" data-en="Complete Rite">圓禮配套</h3>
+              <div class="card__subtitle" data-zh="禮序周全，心亦安然" data-en="Complete rituals, peace of mind.">
+                禮序周全，心亦安然
+              </div>
+              <ul class="list">
+                <li data-zh="標準型棺木" data-en="Standard casket">標準型棺木</li>
+                <li data-zh="法師／道長主持" data-en="Officiant / religious master">法師／道長主持</li>
+                <li data-zh="禮序周全圓滿" data-en="Comprehensive, complete rituals">禮序周全圓滿</li>
+                <li data-zh="讓家屬安心託付" data-en="Peace of mind for the family">讓家屬安心託付</li>
+              </ul>
+              <div class="price">RM 9,888</div>
+              <p class="quote" data-zh="“禮行圓滿，心亦安然。”" data-en="“When rites are complete, hearts find peace.”">
+                “禮行圓滿，心亦安然。”
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="media">
+            <img src="images/尊禮配套.png" alt="尊禮配套 Honored Farewell">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title" data-zh="尊禮配套" data-en="Honored Farewell">尊禮配套</h3>
+              <div class="card__subtitle" data-zh="慎終追遠，以禮致敬" data-en="Exquisite detail, highest respect.">
+                慎終追遠，以禮致敬
+              </div>
+              <ul class="list">
+                <li data-zh="高端精選棺木" data-en="Premium selected casket">高端精選棺木</li>
+                <li data-zh="資深法師主持" data-en="Senior officiant / master">資深法師主持</li>
+                <li data-zh="細節規格更周延" data-en="More thorough planning & detail">細節規格更周延</li>
+                <li data-zh="體現最高敬意" data-en="Express the highest respect">體現最高敬意</li>
+              </ul>
+              <div class="price">RM 13,888</div>
+              <p class="quote" data-zh="“慎終追遠，以禮致敬一生。”" data-en="“Honor a lifetime with the utmost respect.”">
+                “慎終追遠，以禮致敬一生。”
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 data-zh="聯絡我們" data-en="Contact Us">聯絡我們</h2>
+
+        <div class="contact__box">
+          <p class="contact__item">
+            <strong data-zh="📍 地址" data-en="📍 Address">📍 地址</strong><br>
+            <span data-zh="NO111, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
+                  data-en="NO111, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur">
+              NO111, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur
+            </span>
+          </p>
+
+          <p class="contact__item">
+            <strong data-zh="⏰ 24小時服務熱線" data-en="⏰ 24-Hour Hotline">⏰ 24小時服務熱線</strong><br>
+            <span>016-626 2464</span>
+          </p>
+
+          <a class="cta" href="https://wa.me/60166262464" target="_blank" rel="noopener"
+             data-zh="WhatsApp 立即諮詢" data-en="Chat on WhatsApp">
+            WhatsApp 立即諮詢
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div data-zh="© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。"
+           data-en="© 2025 The Ferryman FUNERAL SERVICES. All Rights Reserved.">
+        © 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。
+      </div>
+      <div style="margin-top:8px;"
+           data-zh="專業生命禮儀服務"
+           data-en="Professional funeral & memorial services">
+        專業生命禮儀服務
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const navList = document.getElementById("navList");
+      const menuBtn = document.getElementById("menuBtn");
+      const langBtn = document.getElementById("langBtn");
+
+      // Mobile menu toggle
+      function setMenu(open){
+        navList.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+      }
+
+      menuBtn?.addEventListener("click", () => {
+        const isOpen = navList.classList.contains("open");
+        setMenu(!isOpen);
+      });
+
+      // Close menu on link click (mobile)
+      navList?.addEventListener("click", (e) => {
+        const target = e.target;
+        if(target && target.tagName === "A"){
+          setMenu(false);
+        }
+      });
+
+      // Language toggle (default zh-Hant)
+      let current = "zh";
+      function applyLang(lang){
+        current = lang;
+        document.documentElement.lang = (lang === "zh") ? "zh-Hant" : "en";
+
+        const nodes = document.querySelectorAll("[data-zh][data-en]");
+        nodes.forEach(el => {
+          el.textContent = el.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+        });
+
+        // Update button label
+        langBtn.textContent = (lang === "zh") ? "中 / EN" : "EN / 中";
+      }
+
+      langBtn?.addEventListener("click", () => {
+        applyLang(current === "zh" ? "en" : "zh");
+      });
+
+      applyLang("zh");
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>服務項目 | 擺渡人 FUNERAL SERVICES</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&amp;family=Noto+Sans+TC:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+
+
+    :root{
+      --primary:#141414;
+      --accent:#a67c52;      /* warm gold-brown */
+      --text:#2f2f2f;
+      --muted:#6f6f6f;
+
+      /* premium warm base (reduce “too white”) */
+      --bg:#f6f1ea;
+      --panel:#fbf8f4;
+      --soft:#f2ece4;
+
+      --border:rgba(20,20,20,.10);
+      --shadow: 0 18px 45px rgba(15,15,15,.10);
+      --shadow-soft: 0 8px 20px rgba(15,15,15,.06);
+
+      --radius:16px;
+      --max:1100px;
+
+      --nav-h:72px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ animation:none !important; transition:none !important; }
+    }
+
+    /* Utilities */
+    .container{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+    }
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      padding:10px 14px; background:#fff; border:1px solid var(--border);
+      border-radius:10px; z-index:9999;
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(251,248,244,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(166,124,82,.22);
+    }
+    .nav{
+      height:var(--nav-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .brand__name{
+      font-weight:700;
+      letter-spacing:.08em;
+      color:var(--primary);
+      font-size:1.05rem;
+    }
+    .brand__sub{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.8rem;
+      color:var(--muted);
+      letter-spacing:.08em;
+    }
+
+    .nav__right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      flex:1;
+      min-width:0;
+    }
+
+    .lang-btn{
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.85rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .lang-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    .menu-btn{
+      display:none;
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.9rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .menu-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:14px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+    nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.9rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+      padding: 8px 2px;
+    }
+    nav a:hover{ color:var(--accent); }
+
+          nav ul{
+      list-style:none;
+      display:flex;
+      gap:14px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+      nav ul.open{ display:flex; }
+      nav li{ width:100%; }
+      nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.9rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+      padding: 8px 2px;
+    }
+    }
+
+    /* Sections */
+    main{ padding-top: 0; }
+    section{
+      padding: clamp(64px, 7vw, 110px) 0;
+    }
+    h1,h2,h3{ margin:0 0 12px 0; color:var(--primary); }
+    h2{
+      text-align:center;
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      letter-spacing:.06em;
+      margin-bottom: 28px;
+    }
+    .lead{
+      font-family:"Noto Sans TC", sans-serif;
+      color:var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* Hero */
+    
+    
+    .hero{
+      --hero-bg: url("images/logo.png");
+
+      min-height: 60vh;
+      max-height: 680px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.55) 100%),
+        radial-gradient(800px 400px at 50% 30%, rgba(166,124,82,.18), transparent 60%),
+        var(--hero-bg);
+
+      background-size: cover;
+      background-position: center;
+    }
+
+.hero__inner{
+      padding: 40px 0;
+      text-align:center;
+    }
+ .hero__title{
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  letter-spacing: .18em;
+  color:#fff;
+    }
+    
+
+    
+    .hero__tagline{
+      font-family:\"Noto Sans TC\", sans-serif;
+      color: rgba(255,255,255,.86);
+      margin: 10px 0 0 0;
+      letter-spacing:.06em;
+      font-size: 1rem;
+    }
+/* About */
+    .about{
+      background: transparent;
+    }
+    .about__card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .about__p{
+      margin: 0 0 14px 0;
+    }
+    .bilingual{
+      display:block;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color: #8a8a8a;
+      margin-top: 6px;
+    }
+    .emphasis{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-weight:700;
+    }
+
+    /* Packages */
+    .packages{
+      background: linear-gradient(180deg, rgba(166,124,82,.06), rgba(0,0,0,0) 55%);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(166,124,82,.40);
+      box-shadow: var(--shadow);
+    }
+    .media{
+      height: 260px;
+      background:#eee;
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+      transition: transform .25s ease;
+    }
+    .card:hover .media img{ transform: scale(1.06); }
+
+    .card__body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    .card__title{
+      font-size:1.18rem;
+      margin-bottom: 8px;
+    }
+    .card__subtitle{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color:var(--muted);
+      margin-bottom: 16px;
+    }
+    .list{
+      text-align:left;
+      padding-left: 18px;
+      margin: 0 0 16px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.95rem;
+    }
+    .price{
+      color:var(--accent);
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      font-size:1.4rem;
+      margin: 14px 0 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .quote{
+      font-family:"Noto Sans TC", sans-serif;
+      color:#666;
+      margin: 10px 0 0 0;
+    }
+
+    /* Contact */
+    .contact{
+      background: transparent;
+    }
+    .contact__box{
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      text-align:center;
+      box-shadow: var(--shadow-soft);
+    }
+    .contact__item{
+      margin: 0 0 14px 0;
+      font-family:"Noto Sans TC", sans-serif;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top: 10px;
+
+      background: linear-gradient(180deg, rgba(166,124,82,1), rgba(140,104,70,1));
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 22px;
+      border-radius: 999px;
+
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      letter-spacing:.04em;
+      box-shadow: 0 16px 35px rgba(166,124,82,.22);
+
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .cta:hover{ transform: translateY(-2px); filter: brightness(.98); }
+
+    /* Footer */
+    footer{
+      background:var(--primary);
+      color:#bdbdbd;
+      padding: 46px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.88rem;
+      text-align:center;
+    }
+  
+
+/* About Page */
+.page-hero{
+  min-height: 46vh;
+  max-height: 520px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.58) 100%),
+    radial-gradient(900px 420px at 50% 20%, rgba(166,124,82,.20), transparent 60%),
+    url("images/0001");
+  background-size: cover;
+  background-position: center;
+}
+.page-hero__inner{
+  padding: 48px 0;
+  text-align:center;
+}
+.kicker{
+  font-family:"Noto Sans TC", sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.page-title{
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing:.14em;
+  margin:0;
+  color:#fff;
+}
+.page-sub{
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(255,255,255,.86);
+  margin: 14px auto 0;
+  max-width: 52ch;
+  font-size: 1rem;
+  letter-spacing:.06em;
+}
+
+.prose{
+  max-width: 900px;
+  margin: 0 auto;
+}
+.prose p{
+  margin: 0 0 16px 0;
+  font-size: 1.02rem;
+}
+.pull{
+  margin: 26px auto 0;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(166,124,82,.24);
+  background: rgba(251,248,244,.78);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.divider{
+  height:1px;
+  background: rgba(20,20,20,.08);
+  margin: 28px 0;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  align-items:stretch;
+  margin-top: 26px;
+}
+.photo-grid.alt{
+  grid-template-columns: .8fr 1.2fr;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .photo-grid, .photo-grid.alt{ grid-template-columns: 1fr; }
+}
+
+.photo-card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+.photo-card img{
+  width:100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display:block;
+}
+.caption{
+  padding: 14px 16px 16px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  font-size:.95rem;
+}
+
+.side-note{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+  padding: 18px 18px 16px;
+  height: 100%;
+}
+.side-note h3{
+  font-size: 1.05rem;
+  margin: 0 0 10px 0;
+  letter-spacing:.08em;
+}
+.side-note ul{
+  margin:0;
+  padding-left: 18px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--text);
+}
+.side-note li{ margin: 8px 0; color: rgba(20,20,20,.74); }
+
+
+
+/* Funeral Intro Page */
+.page-hero{
+  min-height: 46vh;
+  max-height: 540px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.62) 100%),
+    radial-gradient(900px 420px at 50% 20%, rgba(166,124,82,.20), transparent 60%),
+    url("images/0004");
+  background-size: cover;
+  background-position: center;
+}
+.page-hero__inner{ padding: 52px 0; text-align:center; }
+.kicker{
+  font-family:"Noto Sans TC", sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.page-title{
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing:.14em;
+  margin:0;
+  color:#fff;
+}
+.page-sub{
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(255,255,255,.88);
+  margin: 14px auto 0;
+  max-width: 56ch;
+  font-size: 1rem;
+  letter-spacing:.06em;
+}
+
+.intro-wrap{ max-width: 980px; margin: 0 auto; }
+.intro-lead{
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  text-align:center;
+  max-width: 70ch;
+  margin: 0 auto 10px;
+}
+
+.section-card{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 22px;
+  align-items: start;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .two-col{ grid-template-columns: 1fr; }
+}
+
+.steps{
+  display:grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+.step{
+  display:flex;
+  gap: 12px;
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(20,20,20,.08);
+  border-radius: 14px;
+  background: rgba(251,248,244,.72);
+}
+.badge{
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Noto Sans TC", sans-serif;
+  font-weight:800;
+  color: rgba(20,20,20,.80);
+  border: 1px solid rgba(166,124,82,.35);
+  background: rgba(255,255,255,.50);
+}
+.step h3{
+  margin: 0 0 4px 0;
+  font-size: 1.02rem;
+  letter-spacing:.06em;
+}
+.step p{
+  margin:0;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.72);
+  line-height: 1.7;
+  font-size: .98rem;
+}
+
+.note{
+  border-left: 3px solid rgba(166,124,82,.55);
+  padding-left: 14px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.70);
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .photo-grid{ grid-template-columns: 1fr; }
+}
+.photo-card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+.photo-card img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  display:block;
+}
+.caption{
+  padding: 12px 14px 14px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  font-size:.93rem;
+}
+
+.callout{
+  margin-top: 22px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(166,124,82,.24);
+  background: rgba(251,248,244,.78);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.callout h3{
+  margin:0 0 8px 0;
+  letter-spacing:.08em;
+  font-size: 1.05rem;
+}
+.callout p{
+  margin:0;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.74);
+}
+
+.reminder{
+  text-align:center;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(20,20,20,.08);
+}
+.reminder strong{
+  color: var(--primary);
+  letter-spacing:.06em;
+}
+
+
+
+/* Services Page */
+.page-hero{
+  min-height: 44vh;
+  max-height: 540px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.62) 100%),
+    radial-gradient(900px 420px at 50% 20%, rgba(166,124,82,.20), transparent 60%),
+    url("images/0005");
+  background-size: cover;
+  background-position: center;
+}
+.page-hero__inner{ padding: 52px 0; text-align:center; }
+.kicker{
+  font-family:"Noto Sans TC", sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.page-title{
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing:.14em;
+  margin:0;
+  color:#fff;
+}
+.page-sub{
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(255,255,255,.88);
+  margin: 14px auto 0;
+  max-width: 66ch;
+  font-size: 1rem;
+  letter-spacing:.06em;
+}
+
+.services-wrap{ max-width: 980px; margin: 0 auto; }
+.services-lead{
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  text-align:center;
+  max-width: 78ch;
+  margin: 0 auto 18px;
+}
+
+.service-list{
+  display:grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+details.service{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow:hidden;
+}
+summary.service__head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 18px 18px 14px;
+  cursor:pointer;
+  user-select:none;
+}
+.service__title{
+  display:flex;
+  align-items:baseline;
+  gap: 12px;
+  margin:0;
+}
+.service__title .no{
+  font-family:"Noto Sans TC", sans-serif;
+  font-weight:900;
+  letter-spacing:.12em;
+  color: rgba(20,20,20,.76);
+  border: 1px solid rgba(166,124,82,.35);
+  background: rgba(255,255,255,.55);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .85rem;
+  flex:0 0 auto;
+}
+.service__title h2{
+  text-align:left;
+  margin:0;
+  font-size: 1.18rem;
+  letter-spacing:.08em;
+}
+
+.chev{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(20,20,20,.12);
+  background: rgba(255,255,255,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  transition: transform .18s ease;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.55);
+  font-weight:900;
+}
+details[open] .chev{ transform: rotate(180deg); }
+
+.service__body{
+  padding: 0 18px 18px;
+  border-top: 1px solid rgba(20,20,20,.08);
+}
+.service__body p{
+  margin: 14px 0 12px 0;
+  font-size: 1.02rem;
+}
+
+.bullets{
+  margin: 0;
+  padding-left: 18px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.72);
+}
+.bullets li{ margin: 8px 0; }
+
+.soft-line{
+  height:1px;
+  background: rgba(20,20,20,.08);
+  margin: 16px 0;
+}
+
+.photo-strip{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+  align-items:stretch;
+  margin-top: 18px;
+}
+@media (max-width: 980px){
+  .photo-strip{ grid-template-columns: 1fr; }
+}
+.photo-card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+.photo-card img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  display:block;
+}
+.caption{
+  padding: 12px 14px 14px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  font-size:.93rem;
+}
+
+.promise{
+  margin-top: 22px;
+  padding: 22px 18px 20px;
+  text-align:center;
+  border: 1px solid rgba(166,124,82,.24);
+  background: rgba(251,248,244,.78);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.promise strong{
+  letter-spacing:.08em;
+  color: var(--primary);
+  font-size: 1.06rem;
+}
+
+/* Details summary reset */
+details.service > summary{ list-style:none; }
+details.service > summary::-webkit-details-marker{ display:none; }
+
+
+/* Subtle section rhythm */
+section + section{
+  border-top: 1px solid rgba(20,20,20,.05);
+}
+
+  
+  
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header>
+<div class="container nav">
+<a aria-label="擺渡人 Funeral Services" class="brand" href="#home">
+<img alt="擺渡人 Logo" src="images/logo.png" style="height:42px;"/>
+</a>
+<div class="nav__right">
+<button aria-label="Language toggle" class="lang-btn" id="langBtn" type="button">
+          中 / EN
+        </button>
+<button aria-controls="navList" aria-expanded="false" class="menu-btn" data-en="Menu" data-zh="選單" id="menuBtn" type="button">選單</button>
+<nav aria-label="Primary">
+<ul id="navList">
+<li><a data-en="Home" data-zh="首頁" href="index.html">首頁</a></li>
+<li><a data-en="About" data-zh="關於擺渡人" href="about.html">關於擺渡人</a></li>
+<li><a data-en="Funeral Overview" data-zh="喪禮簡介" href="funeral-intro.html">喪禮簡介</a></li>
+<li><a data-en="The Final Journey" data-zh="最後一程" href="last-journey.html">最後一程</a></li>
+<li><a data-en="Services" data-zh="服務項目" href="services.html">服務項目</a></li>
+<li><a data-en="Daily Life" data-zh="擺渡人日常" href="daily.html">擺渡人日常</a></li>
+<li><a data-en="Contact" data-zh="聯絡" href="contact.html">聯絡</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<main id="main">
+<!-- PAGE HERO -->
+<section aria-label="服務項目" class="page-hero">
+<div class="container page-hero__inner">
+<div class="kicker" data-en="SERVICES" data-zh="服務項目">SERVICES</div>
+<h1 class="page-title" data-en="Services" data-zh="服務項目">服務項目</h1>
+<p class="page-sub" data-en="What we can take on for you" data-zh="我們能替你做的事">我們能替你做的事</p>
+</div>
+</section>
+<section aria-label="服務內容" class="about">
+<div class="container">
+<div class="services-wrap">
+<p class="services-lead" data-en="When something happens, most people don’t know what to do first—not because they lack reason, but because it’s sudden.&lt;br&gt;You don’t have to stay calm. We’ll keep things clear for you." data-html="1" data-zh="事情發生時，大多數人都不知道該先做什麼。不是因為不夠理性，而是因為太突然。&lt;br/&gt;
+            你不用冷靜，我們會替你把事情保持清楚。">
+            事情發生時，大多數人都不知道該先做什麼。不是因為不夠理性，而是因為太突然。<br/>
+            你不用冷靜，我們會替你把事情保持清楚。
+          </p>
+<!-- Photos (optional, keep minimal) -->
+<div aria-label="照片區（可替換）" class="photo-strip">
+<figure class="photo-card">
+<img alt="服務項目｜照片位置 1" src="images/0004"/>
+<figcaption class="caption" data-en="(Photo slot 1) Replace with: &lt;code&gt;images/0004&lt;/code&gt;" data-html="1" data-zh="（照片位置 1）你可替換：&lt;code&gt;images/0004&lt;/code&gt;">（照片位置 1）你可替換：<code>images/0004</code></figcaption>
+</figure>
+<figure class="photo-card">
+<img alt="服務項目｜照片位置 2" src="images/0006"/>
+<figcaption class="caption" data-en="(Photo slot 2) Replace with: &lt;code&gt;images/0006&lt;/code&gt;" data-html="1" data-zh="（照片位置 2）你可替換：&lt;code&gt;images/0006&lt;/code&gt;">（照片位置 2）你可替換：<code>images/0006</code></figcaption>
+</figure>
+</div>
+<div class="service-list">
+<details class="service" open="">
+<summary class="service__head">
+<div class="service__title">
+<span class="no">一</span>
+<h2 data-en="First Response: Presence &amp; Guidance" data-zh="第一時間的陪伴與說明">第一時間的陪伴與說明</h2>
+</div>
+<div class="chev">⌃</div>
+</summary>
+<div class="service__body">
+<p data-en="When something happens, most people don’t know what to do first—not because they lack reason, but because it’s sudden." data-zh="事情發生時，大多數人都不知道該先做什麼。不是因為不夠理性，而是因為太突然。">事情發生時，大多數人都不知道該先做什麼。不是因為不夠理性，而是因為太突然。</p>
+<p data-en="We’ll listen first, then explain—what must be handled right now, and what can actually wait." data-zh="我們會先聽你說話，再慢慢告訴你——哪些事情現在一定要處理，哪些事情，其實可以等。">我們會先聽你說話，再慢慢告訴你——哪些事情現在一定要處理，哪些事情，其實可以等。</p>
+<div class="soft-line"></div>
+<ul class="bullets">
+<li data-en="24/7 immediate contact &amp; response" data-zh="24 小時即時聯絡與回應">24 小時即時聯絡與回應</li>
+<li data-en="Clear explanation of what will happen next" data-zh="清楚說明接下來會發生的流程">清楚說明接下來會發生的流程</li>
+<li data-en="No rushing decisions, no pressure to choose a package" data-zh="不急著做決定，也不逼你選方案">不急著做決定，也不逼你選方案</li>
+</ul>
+<p data-en="You don’t have to stay calm. We’ll keep things clear for you." data-zh="你不用冷靜，我們會替你把事情保持清楚。" style="margin-top:14px;">你不用冷靜，我們會替你把事情保持清楚。</p>
+</div>
+</details>
+<details class="service">
+<summary class="service__head">
+<div class="service__title">
+<span class="no">二</span>
+<h2 data-en="Transfer &amp; Dignified Placement" data-zh="接體與妥善安置">接體與妥善安置</h2>
+</div>
+<div class="chev">⌃</div>
+</summary>
+<div class="service__body">
+<p data-en="This is the earliest step—and also the one that deserves the most respect." data-zh="這是最早的一步，也是最需要被尊重的一步。">這是最早的一步，也是最需要被尊重的一步。</p>
+<p data-en="We ensure the entire process is quiet, lawful, and unrushed—so no unnecessary panic is placed upon the deceased." data-zh="我們會確保整個過程安靜、合法、不倉促，不讓任何多餘的慌亂，發生在逝者身上。">我們會確保整個過程安靜、合法、不倉促，不讓任何多餘的慌亂，發生在逝者身上。</p>
+<div class="soft-line"></div>
+<ul class="bullets">
+<li data-en="Lawful transfer with full accompaniment" data-zh="合法接體與全程陪同">合法接體與全程陪同</li>
+<li data-en="Cleansing, preparation, and placement" data-zh="遺體清潔、整理與安置">遺體清潔、整理與安置</li>
+<li data-en="Coordination with hospitals, homes, and relevant authorities" data-zh="協調醫院、住家與相關單位流程">協調醫院、住家與相關單位流程</li>
+</ul>
+<p data-en="We believe the way we treat the deceased is, in itself, a form of farewell." data-zh="我們始終相信：怎麼對待逝者，本身就是一場告別。" style="margin-top:14px;">我們始終相信：怎麼對待逝者，本身就是一場告別。</p>
+</div>
+</details>
+<details class="service">
+<summary class="service__head">
+<div class="service__title">
+<span class="no">三</span>
+<h2 data-en="Funeral Planning &amp; Overall Flow" data-zh="喪禮規劃與整體流程">喪禮規劃與整體流程</h2>
+</div>
+<div class="chev">⌃</div>
+</summary>
+<div class="service__body">
+<p data-en="There is no standard answer for a funeral—only what fits this family." data-zh="喪禮沒有標準答案，只有「適不適合這個家庭」。">喪禮沒有標準答案，只有「適不適合這個家庭」。</p>
+<p data-en="We don’t force a template, and we don’t compare you to anyone else." data-zh="我們不套公式，也不拿別人的方式來比較。">我們不套公式，也不拿別人的方式來比較。</p>
+<div class="soft-line"></div>
+<ul class="bullets">
+<li data-en="Planned around faith, culture, and family wishes" data-zh="依信仰、文化與家屬意願規劃">依信仰、文化與家屬意願規劃</li>
+<li data-en="Clear explanation of each ritual’s meaning" data-zh="清楚說明每一個儀式的意義">清楚說明每一個儀式的意義</li>
+<li data-en="No imposition, no comparison, no “must-do” pressure" data-zh="不強加、不比較、不暗示「一定要」">不強加、不比較、不暗示「一定要」</li>
+</ul>
+<p data-en="We arrange the essentials; the form and choices always remain in your hands." data-zh="我們只幫你把事情安排好，形式與選擇，始終在你手上。" style="margin-top:14px;">我們只幫你把事情安排好，形式與選擇，始終在你手上。</p>
+</div>
+</details>
+<details class="service">
+<summary class="service__head">
+<div class="service__title">
+<span class="no">四</span>
+<h2 data-en="Farewell &amp; Memorial-Site Arrangements" data-zh="告別與靈堂現場安排">告別與靈堂現場安排</h2>
+</div>
+<div class="chev">⌃</div>
+</summary>
+<div class="service__body">
+<p data-en="The time of farewell is fragile—and easily interrupted." data-zh="告別的那段時間，其實很脆弱，也很容易被打斷。">告別的那段時間，其實很脆弱，也很容易被打斷。</p>
+<p data-en="We organize the space and keep unnecessary noise outside, so you can say what needs to be said in peace." data-zh="我們會把現場整理好，把不必要的聲音擋在外面，讓家屬可以安心地，把該說的話說完。">我們會把現場整理好，把不必要的聲音擋在外面，讓家屬可以安心地，把該說的話說完。</p>
+<div class="soft-line"></div>
+<ul class="bullets">
+<li data-en="Preparation and farewell ceremony arrangements" data-zh="入殮與告別儀式安排">入殮與告別儀式安排</li>
+<li data-en="Memorial setup and flow control" data-zh="靈堂佈置與動線控制">靈堂佈置與動線控制</li>
+<li data-en="On-site coordination to prevent disruptions" data-zh="現場秩序掌握，避免干擾">現場秩序掌握，避免干擾</li>
+</ul>
+<p data-en="Some words can only be spoken then. We help keep that time intact." data-zh="有些話，只能在那個時候說。我們會替你，把那段時間留住。" style="margin-top:14px;">有些話，只能在那個時候說。我們會替你，把那段時間留住。</p>
+</div>
+</details>
+<details class="service">
+<summary class="service__head">
+<div class="service__title">
+<span class="no">五</span>
+<h2 data-en="The Final Journey &amp; Send-Off" data-zh="最後一程與送行">最後一程與送行</h2>
+</div>
+<div class="chev">⌃</div>
+</summary>
+<div class="service__body">
+<p data-en="For the final journey, we stay with you to the end." data-zh="最後一程，我們會陪到最後。">最後一程，我們會陪到最後。</p>
+<p data-en="Not to lead the front, but to make sure this stretch is steady and complete." data-zh="不是走在最前面，而是確保這一段路，走得穩、走得完整。">不是走在最前面，而是確保這一段路，走得穩、走得完整。</p>
+<div class="soft-line"></div>
+<ul class="bullets">
+<li data-en="Procession planning and time coordination" data-zh="出殯流程安排與時間掌控">出殯流程安排與時間掌控</li>
+<li data-en="Convoy and on-site pacing coordination" data-zh="車隊與現場節奏協調">車隊與現場節奏協調</li>
+<li data-en="Full accompaniment for cremation/burial" data-zh="火化／安葬全程陪同">火化／安葬全程陪同</li>
+</ul>
+<p data-en="We step back only when you are ready to leave." data-zh="直到你準備好離開，我們才會退後。" style="margin-top:14px;">直到你準備好離開，我們才會退後。</p>
+</div>
+</details>
+<details class="service">
+<summary class="service__head">
+<div class="service__title">
+<span class="no">六</span>
+<h2 data-en="Aftercare &amp; Placement Support" data-zh="後續事宜與安置協助">後續事宜與安置協助</h2>
+</div>
+<div class="chev">⌃</div>
+</summary>
+<div class="service__body">
+<p data-en="After the farewell, life still has to go on." data-zh="告別結束後，生活還是要繼續。">告別結束後，生活還是要繼續。</p>
+<p data-en="We help handle what comes after, one item at a time—so this experience truly has an ending." data-zh="我們會協助把後面的事一件一件處理好，讓這段經歷，真的有一個收尾。">我們會協助把後面的事一件一件處理好，讓這段經歷，真的有一個收尾。</p>
+<div class="soft-line"></div>
+<ul class="bullets">
+<li data-en="Ash placement and follow-up guidance" data-zh="骨灰安置與後續說明">骨灰安置與後續說明</li>
+<li data-en="Niche/cemetery and related coordination" data-zh="塔位、墓園或相關協調">塔位、墓園或相關協調</li>
+<li data-en="Reducing the family’s ongoing administrative burden" data-zh="減輕家屬後續的處理負擔">減輕家屬後續的處理負擔</li>
+</ul>
+<p data-en="Not merely finishing tasks, but helping the heart slowly set things down." data-zh="不是把事情做完，而是讓心，慢慢放下來。" style="margin-top:14px;">不是把事情做完，而是讓心，慢慢放下來。</p>
+</div>
+</details>
+</div>
+<div class="promise">
+<strong data-en="[When you can’t hold it together, please allow us to stand in front of you.]" data-zh="【撐不住的時候，請應許我們站在你前面。】">【撐不住的時候，請應許我們站在你前面。】</strong>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div data-en="© 2025 The Ferryman Funeral Services. All rights reserved." data-zh="© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。">© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。</div>
+<div data-en="Professional life-ceremony services" data-zh="專業生命禮儀服務" style="margin-top:8px;">專業生命禮儀服務</div>
+</div>
+</footer>
+<script>
+
+
+
+    (function(){
+      const navList = document.getElementById("navList");
+      const menuBtn = document.getElementById("menuBtn");
+      const langBtn = document.getElementById("langBtn");
+
+      // Mobile menu toggle
+      function setMenu(open){
+        navList.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+      }
+
+      menuBtn?.addEventListener("click", () => {
+        const isOpen = navList.classList.contains("open");
+        setMenu(!isOpen);
+      });
+
+      // Close menu on link click (mobile)
+      navList?.addEventListener("click", (e) => {
+        const target = e.target;
+        if(target && target.tagName === "A"){
+          setMenu(false);
+        }
+      });
+
+      // Language toggle (default zh-Hant)
+      let current = "zh";
+      function applyLang(lang){
+        current = lang;
+        document.documentElement.lang = (lang === "zh") ? "zh-Hant" : "en";
+
+        const nodes = document.querySelectorAll("[data-zh][data-en]");
+        nodes.forEach(el => {
+          const val = el.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+          const htmlMode = el.hasAttribute("data-html");
+          if(htmlMode){
+            el.innerHTML = val;
+          }else{
+            el.textContent = val;
+          }
+        });
+
+        // Update button label
+        langBtn.textContent = (lang === "zh") ? "中 / EN" : "EN / 中";
+      }
+
+      langBtn?.addEventListener("click", () => {
+        applyLang(current === "zh" ? "en" : "zh");
+      });
+
+      applyLang("zh");
+    })();
+  
+  
+  
+  </script>
+<script>
+    // Accordion: open only one section at a time
+    (function(){
+      const list = document.querySelectorAll("details.service");
+      list.forEach(d => {
+        d.addEventListener("toggle", () => {
+          if(d.open){
+            list.forEach(other => { if(other !== d) other.open = false; });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

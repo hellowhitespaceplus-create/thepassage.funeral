@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>喪禮簡介 | 擺渡人 FUNERAL SERVICES</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&amp;family=Noto+Sans+TC:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+
+    :root{
+      --primary:#141414;
+      --accent:#a67c52;      /* warm gold-brown */
+      --text:#2f2f2f;
+      --muted:#6f6f6f;
+
+      /* premium warm base (reduce “too white”) */
+      --bg:#f6f1ea;
+      --panel:#fbf8f4;
+      --soft:#f2ece4;
+
+      --border:rgba(20,20,20,.10);
+      --shadow: 0 18px 45px rgba(15,15,15,.10);
+      --shadow-soft: 0 8px 20px rgba(15,15,15,.06);
+
+      --radius:16px;
+      --max:1100px;
+
+      --nav-h:72px;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *{ animation:none !important; transition:none !important; }
+    }
+
+    /* Utilities */
+    .container{
+      width:min(var(--max), 92vw);
+      margin:0 auto;
+    }
+    .skip-link{
+      position:absolute; left:-999px; top:auto;
+      width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto;
+      padding:10px 14px; background:#fff; border:1px solid var(--border);
+      border-radius:10px; z-index:9999;
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(251,248,244,.78);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(166,124,82,.22);
+    }
+    .nav{
+      height:var(--nav-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .brand__name{
+      font-weight:700;
+      letter-spacing:.08em;
+      color:var(--primary);
+      font-size:1.05rem;
+    }
+    .brand__sub{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.8rem;
+      color:var(--muted);
+      letter-spacing:.08em;
+    }
+
+    .nav__right{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      flex:1;
+      min-width:0;
+    }
+
+    .lang-btn{
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.85rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .lang-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    .menu-btn{
+      display:none;
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:600;
+      font-size:.9rem;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:999px;
+      cursor:pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .menu-btn:hover{ border-color:var(--accent); transform: translateY(-1px); }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:14px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+    nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.9rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+      padding: 8px 2px;
+    }
+    nav a:hover{ color:var(--accent); }
+
+          nav ul{
+      list-style:none;
+      display:flex;
+      gap:14px;
+      margin:0;
+      padding:0;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:nowrap;
+      overflow-x:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      font-family:"Noto Sans TC", sans-serif;
+      min-width:0;
+    }
+    nav ul::-webkit-scrollbar{ display:none; }
+      nav ul.open{ display:flex; }
+      nav li{ width:100%; }
+      nav a{
+      text-decoration:none;
+      color: rgba(20,20,20,.72);
+      font-size:.9rem;
+      font-weight:600;
+      transition: color .15s ease;
+      white-space:nowrap;
+      word-break:keep-all;
+      padding: 8px 2px;
+    }
+    }
+
+    /* Sections */
+    main{ padding-top: 0; }
+    section{
+      padding: clamp(64px, 7vw, 110px) 0;
+    }
+    h1,h2,h3{ margin:0 0 12px 0; color:var(--primary); }
+    h2{
+      text-align:center;
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      letter-spacing:.06em;
+      margin-bottom: 28px;
+    }
+    .lead{
+      font-family:"Noto Sans TC", sans-serif;
+      color:var(--muted);
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* Hero */
+    
+    
+    .hero{
+      --hero-bg: url("images/logo.png");
+
+      min-height: 60vh;
+      max-height: 680px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.55) 100%),
+        radial-gradient(800px 400px at 50% 30%, rgba(166,124,82,.18), transparent 60%),
+        var(--hero-bg);
+
+      background-size: cover;
+      background-position: center;
+    }
+
+.hero__inner{
+      padding: 40px 0;
+      text-align:center;
+    }
+ .hero__title{
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  letter-spacing: .18em;
+  color:#fff;
+    }
+    
+
+    
+    .hero__tagline{
+      font-family:\"Noto Sans TC\", sans-serif;
+      color: rgba(255,255,255,.86);
+      margin: 10px 0 0 0;
+      letter-spacing:.06em;
+      font-size: 1rem;
+    }
+/* About */
+    .about{
+      background: transparent;
+    }
+    .about__card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .about__p{
+      margin: 0 0 14px 0;
+    }
+    .bilingual{
+      display:block;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color: #8a8a8a;
+      margin-top: 6px;
+    }
+    .emphasis{
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-weight:700;
+    }
+
+    /* Packages */
+    .packages{
+      background: linear-gradient(180deg, rgba(166,124,82,.06), rgba(0,0,0,0) 55%);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(166,124,82,.40);
+      box-shadow: var(--shadow);
+    }
+    .media{
+      height: 260px;
+      background:#eee;
+      overflow:hidden;
+    }
+    .media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform: scale(1.02);
+      transition: transform .25s ease;
+    }
+    .card:hover .media img{ transform: scale(1.06); }
+
+    .card__body{
+      margin:0;
+      font-family:"Noto Serif TC", serif;
+      color:var(--text);
+      line-height:1.7;
+
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(166,124,82,.10), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(20,20,20,.06), transparent 60%),
+        linear-gradient(180deg, #f8f3ec 0%, var(--bg) 35%, #f6f1ea 100%);
+    }
+    .card__title{
+      font-size:1.18rem;
+      margin-bottom: 8px;
+    }
+    .card__subtitle{
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.92rem;
+      color:var(--muted);
+      margin-bottom: 16px;
+    }
+    .list{
+      text-align:left;
+      padding-left: 18px;
+      margin: 0 0 16px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.95rem;
+    }
+    .price{
+      color:var(--accent);
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      font-size:1.4rem;
+      margin: 14px 0 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .quote{
+      font-family:"Noto Sans TC", sans-serif;
+      color:#666;
+      margin: 10px 0 0 0;
+    }
+
+    /* Contact */
+    .contact{
+      background: transparent;
+    }
+    .contact__box{
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(18px, 3vw, 34px);
+      text-align:center;
+      box-shadow: var(--shadow-soft);
+    }
+    .contact__item{
+      margin: 0 0 14px 0;
+      font-family:"Noto Sans TC", sans-serif;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-top: 10px;
+
+      background: linear-gradient(180deg, rgba(166,124,82,1), rgba(140,104,70,1));
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 22px;
+      border-radius: 999px;
+
+      font-family:"Noto Sans TC", sans-serif;
+      font-weight:800;
+      letter-spacing:.04em;
+      box-shadow: 0 16px 35px rgba(166,124,82,.22);
+
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .cta:hover{ transform: translateY(-2px); filter: brightness(.98); }
+
+    /* Footer */
+    footer{
+      background:var(--primary);
+      color:#bdbdbd;
+      padding: 46px 0;
+      font-family:"Noto Sans TC", sans-serif;
+      font-size:.88rem;
+      text-align:center;
+    }
+  
+
+/* About Page */
+.page-hero{
+  min-height: 46vh;
+  max-height: 520px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.58) 100%),
+    radial-gradient(900px 420px at 50% 20%, rgba(166,124,82,.20), transparent 60%),
+    url("images/0001");
+  background-size: cover;
+  background-position: center;
+}
+.page-hero__inner{
+  padding: 48px 0;
+  text-align:center;
+}
+.kicker{
+  font-family:"Noto Sans TC", sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.page-title{
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing:.14em;
+  margin:0;
+  color:#fff;
+}
+.page-sub{
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(255,255,255,.86);
+  margin: 14px auto 0;
+  max-width: 52ch;
+  font-size: 1rem;
+  letter-spacing:.06em;
+}
+
+.prose{
+  max-width: 900px;
+  margin: 0 auto;
+}
+.prose p{
+  margin: 0 0 16px 0;
+  font-size: 1.02rem;
+}
+.pull{
+  margin: 26px auto 0;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(166,124,82,.24);
+  background: rgba(251,248,244,.78);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.divider{
+  height:1px;
+  background: rgba(20,20,20,.08);
+  margin: 28px 0;
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  align-items:stretch;
+  margin-top: 26px;
+}
+.photo-grid.alt{
+  grid-template-columns: .8fr 1.2fr;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .photo-grid, .photo-grid.alt{ grid-template-columns: 1fr; }
+}
+
+.photo-card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+.photo-card img{
+  width:100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display:block;
+}
+.caption{
+  padding: 14px 16px 16px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  font-size:.95rem;
+}
+
+.side-note{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+  padding: 18px 18px 16px;
+  height: 100%;
+}
+.side-note h3{
+  font-size: 1.05rem;
+  margin: 0 0 10px 0;
+  letter-spacing:.08em;
+}
+.side-note ul{
+  margin:0;
+  padding-left: 18px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--text);
+}
+.side-note li{ margin: 8px 0; color: rgba(20,20,20,.74); }
+
+
+
+/* Funeral Intro Page */
+.page-hero{
+  min-height: 46vh;
+  max-height: 540px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.42) 55%, rgba(0,0,0,.62) 100%),
+    radial-gradient(900px 420px at 50% 20%, rgba(166,124,82,.20), transparent 60%),
+    url("images/0004");
+  background-size: cover;
+  background-position: center;
+}
+.page-hero__inner{ padding: 52px 0; text-align:center; }
+.kicker{
+  font-family:"Noto Sans TC", sans-serif;
+  letter-spacing:.22em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 10px;
+}
+.page-title{
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  letter-spacing:.14em;
+  margin:0;
+  color:#fff;
+}
+.page-sub{
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(255,255,255,.88);
+  margin: 14px auto 0;
+  max-width: 56ch;
+  font-size: 1rem;
+  letter-spacing:.06em;
+}
+
+.intro-wrap{ max-width: 980px; margin: 0 auto; }
+.intro-lead{
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  text-align:center;
+  max-width: 70ch;
+  margin: 0 auto 10px;
+}
+
+.section-card{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 22px;
+  align-items: start;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .two-col{ grid-template-columns: 1fr; }
+}
+
+.steps{
+  display:grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+.step{
+  display:flex;
+  gap: 12px;
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(20,20,20,.08);
+  border-radius: 14px;
+  background: rgba(251,248,244,.72);
+}
+.badge{
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Noto Sans TC", sans-serif;
+  font-weight:800;
+  color: rgba(20,20,20,.80);
+  border: 1px solid rgba(166,124,82,.35);
+  background: rgba(255,255,255,.50);
+}
+.step h3{
+  margin: 0 0 4px 0;
+  font-size: 1.02rem;
+  letter-spacing:.06em;
+}
+.step p{
+  margin:0;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.72);
+  line-height: 1.7;
+  font-size: .98rem;
+}
+
+.note{
+  border-left: 3px solid rgba(166,124,82,.55);
+  padding-left: 14px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.70);
+}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+@media (max-width: 980px){
+  .photo-grid{ grid-template-columns: 1fr; }
+}
+.photo-card{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+.photo-card img{
+  width:100%;
+  height: 320px;
+  object-fit: cover;
+  display:block;
+}
+.caption{
+  padding: 12px 14px 14px;
+  font-family:"Noto Sans TC", sans-serif;
+  color: var(--muted);
+  font-size:.93rem;
+}
+
+.callout{
+  margin-top: 22px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(166,124,82,.24);
+  background: rgba(251,248,244,.78);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.callout h3{
+  margin:0 0 8px 0;
+  letter-spacing:.08em;
+  font-size: 1.05rem;
+}
+.callout p{
+  margin:0;
+  font-family:"Noto Sans TC", sans-serif;
+  color: rgba(20,20,20,.74);
+}
+
+.reminder{
+  text-align:center;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(20,20,20,.08);
+}
+.reminder strong{
+  color: var(--primary);
+  letter-spacing:.06em;
+}
+
+
+/* Subtle section rhythm */
+section + section{
+  border-top: 1px solid rgba(20,20,20,.05);
+}
+
+  
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header>
+<div class="container nav">
+<a aria-label="擺渡人 Funeral Services" class="brand" href="#home">
+<img alt="擺渡人 Logo" src="images/logo.png" style="height:42px;"/>
+</a>
+<div class="nav__right">
+<button aria-label="Language toggle" class="lang-btn" id="langBtn" type="button">
+          中 / EN
+        </button>
+<button aria-controls="navList" aria-expanded="false" class="menu-btn" data-en="Menu" data-zh="選單" id="menuBtn" type="button">選單</button>
+<nav aria-label="Primary">
+<ul id="navList">
+<li><a data-en="Home" data-zh="首頁" href="index.html">首頁</a></li>
+<li><a data-en="About" data-zh="關於擺渡人" href="about.html">關於擺渡人</a></li>
+<li><a data-en="Funeral Overview" data-zh="喪禮簡介" href="funeral-intro.html">喪禮簡介</a></li>
+<li><a data-en="The Final Journey" data-zh="最後一程" href="last-journey.html">最後一程</a></li>
+<li><a data-en="Services" data-zh="服務項目" href="services.html">服務項目</a></li>
+<li><a data-en="Daily Life" data-zh="擺渡人日常" href="daily.html">擺渡人日常</a></li>
+<li><a data-en="Contact" data-zh="聯絡" href="contact.html">聯絡</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<main id="main">
+<!-- PAGE HERO (Photo slot #1: background uses images/0004) -->
+<section aria-label="喪禮簡介" class="page-hero">
+<div class="container page-hero__inner">
+<div class="kicker" data-en="FUNERAL OVERVIEW" data-zh="喪禮簡介">FUNERAL INTRO</div>
+<h1 class="page-title" data-en="Funeral Overview" data-zh="喪禮簡介">喪禮簡介</h1>
+<p class="page-sub" data-en="A funeral is a path of farewell." data-zh="喪禮，是一段告別的路">喪禮，是一段告別的路</p>
+</div>
+</section>
+<section aria-label="喪禮介紹" class="about">
+<div class="container">
+<div class="intro-wrap">
+<p class="intro-lead" data-en="A funeral is not simply “getting things done.” It is a way to see a life off with care—and a time for those who remain to slowly return their hearts to where they belong." data-zh="喪禮並不是「把事情辦完」，而是讓一個生命，能夠被好好送行。它也是留在人世的人，能夠慢慢把心放回原位的一段時間。">
+            喪禮並不是「把事情辦完」，而是讓一個生命，能夠被好好送行。它也是留在人世的人，能夠慢慢把心放回原位的一段時間。
+          </p>
+<div class="section-card">
+<p data-en="In the most chaotic moment, families are often forced to make many decisions in a very short time: how to arrange the ceremony, whom to inform, how the steps should proceed, and what customs or taboos to observe." data-zh="在最慌亂的當下，家屬常常會被迫在短時間內做出許多決定：要怎麼安排儀式？要通知哪些親友？流程要怎麼走？要注意什麼禁忌？" style="margin:0 0 12px 0;">
+              在最慌亂的當下，家屬常常會被迫在短時間內做出許多決定：要怎麼安排儀式？要通知哪些親友？流程要怎麼走？要注意什麼禁忌？
+            </p>
+<p data-en="Our work is to turn all of that into arrangements that are clear, understandable, and dependable—so you can save your strength for what truly matters: saying goodbye." data-zh="擺渡人的工作，就是把這些變成清楚、可理解、可依靠的安排，讓家屬可以把力氣留給真正重要的事——好好告別。" style="margin:0;">
+              擺渡人的工作，就是把這些變成清楚、可理解、可依靠的安排，讓家屬可以把力氣留給真正重要的事——好好告別。
+            </p>
+<div class="two-col">
+<div>
+<h2 data-en="What does a typical funeral include?" data-zh="一場喪禮通常包含哪些部分？" style="text-align:left; margin: 6px 0 10px 0;">一場喪禮通常包含哪些部分？</h2>
+<p class="note" data-en="Different beliefs, customs, and family needs vary, but most processes generally include:" data-zh="不同信仰、習俗與家庭需求不盡相同，但多數流程大致會包含：" style="margin:0;">
+                  不同信仰、習俗與家庭需求不盡相同，但多數流程大致會包含：
+                </p>
+<div aria-label="喪禮流程" class="steps">
+<div class="step">
+<div class="badge">1</div>
+<div>
+<h3 data-en="Transfer &amp; Placement" data-zh="接體與安置">接體與安置</h3>
+<p data-en="Ensuring the deceased is cared for and settled with dignity." data-zh="讓逝者得到妥善照護與安頓。">讓逝者得到妥善照護與安頓。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">2</div>
+<div>
+<h3 data-en="Service Planning" data-zh="治喪規劃">治喪規劃</h3>
+<p data-en="Helping the family decide the format, date, venue, and ceremony details." data-zh="協助家屬決定形式、日期、場地與儀式內容。">協助家屬決定形式、日期、場地與儀式內容。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">3</div>
+<div>
+<h3 data-en="Preparation &amp; Farewell" data-zh="入殮與告別">入殮與告別</h3>
+<p data-en="Preparing appearance, setting the memorial space, and arranging visits and remembrance." data-zh="整理儀容、佈置靈堂、安排弔唁與追思。">整理儀容、佈置靈堂、安排弔唁與追思。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">4</div>
+<div>
+<h3 data-en="Religious Rites" data-zh="宗教儀式">宗教儀式</h3>
+<p data-en="Arranging rituals by faith—services, prayers, chanting, Taoist rites, and more." data-zh="依信仰安排法事／祈禱／誦經／道教科儀等。">依信仰安排法事／祈禱／誦經／道教科儀等。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">5</div>
+<div>
+<h3 data-en="Procession &amp; Burial/Cremation" data-zh="出殯與安葬／火化">出殯與安葬／火化</h3>
+<p data-en="Coordinating the journey and maintaining order on site." data-zh="送行的路程安排與現場秩序掌握。">送行的路程安排與現場秩序掌握。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">6</div>
+<div>
+<h3 data-en="Aftercare" data-zh="後續事宜">後續事宜</h3>
+<p data-en="Ash placement, niche/cemetery coordination, and reducing the family’s ongoing burden." data-zh="骨灰安置、塔位／墓園協調、簡化家屬後續負擔。">骨灰安置、塔位／墓園協調、簡化家屬後續負擔。</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="callout">
+<h3 data-en="We break the process into steps you can understand" data-zh="我們會把流程拆成「你看得懂的步驟」">我們會把流程拆成「你看得懂的步驟」</h3>
+<p data-en="We walk with you one step at a time—so you’re never forced to figure it out alone in grief." data-zh="一項一項陪你走，不讓你在悲傷裡被迫摸索。">一項一項陪你走，不讓你在悲傷裡被迫摸索。</p>
+</div>
+<!-- Photo slot #2 -->
+<figure class="photo-card" style="margin: 18px 0 0 0;">
+<img alt="喪禮簡介｜照片位置 2" src="images/0005"/>
+<figcaption class="caption" data-en="(Photo slot 2) Replace with: &lt;code&gt;images/0005&lt;/code&gt;" data-html="1" data-zh="（照片位置 2）你可替換：&lt;code&gt;images/0005&lt;/code&gt;">（照片位置 2）你可替換：<code>images/0005</code></figcaption>
+</figure>
+<div class="callout" style="margin-top:18px;">
+<h3 data-en="You don’t need to understand everything at once" data-zh="你不需要一次懂完">你不需要一次懂完</h3>
+<p data-en="Many people facing a funeral for the first time feel an anxious question: “Should I already know what to do?” You don’t have to.&lt;br&gt;A funeral is not an exam, and families don’t need to act like professionals. You only need to do what you can—be present, remember, and say goodbye. The complicated arrangements can be left to us." data-html="1" data-zh="很多人第一次面對喪禮，心裡會浮現一種焦慮：「我是不是應該要知道怎麼做？」其實不用。&lt;br/&gt;
+                    喪禮不是考試，家屬不需要表現得專業。你只需要做你能做的——陪伴、思念、與好好告別。其餘繁瑣的安排，就交給我們。">
+                    很多人第一次面對喪禮，心裡會浮現一種焦慮：「我是不是應該要知道怎麼做？」其實不用。<br/>
+                    喪禮不是考試，家屬不需要表現得專業。你只需要做你能做的——陪伴、思念、與好好告別。其餘繁瑣的安排，就交給我們。
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Photos row (slots #3 and #4) -->
+<div aria-label="照片區" class="photo-grid">
+<figure class="photo-card">
+<img alt="喪禮簡介｜照片位置 3" src="images/0004"/>
+<figcaption class="caption" data-en="(Photo slot 3) Replace with: &lt;code&gt;images/0004&lt;/code&gt; (also used as the page-hero background)" data-html="1" data-zh="（照片位置 3）你可替換：&lt;code&gt;images/0004&lt;/code&gt;（此張同時作為頁首背景）">（照片位置 3）你可替換：<code>images/0004</code>（此張同時作為頁首背景）</figcaption>
+</figure>
+<figure class="photo-card">
+<img alt="喪禮簡介｜照片位置 4" src="images/0006"/>
+<figcaption class="caption" data-en="(Photo slot 4) Replace with: &lt;code&gt;images/0006&lt;/code&gt;" data-html="1" data-zh="（照片位置 4）你可替換：&lt;code&gt;images/0006&lt;/code&gt;">（照片位置 4）你可替換：<code>images/0006</code></figcaption>
+</figure>
+</div>
+<div class="section-card" style="margin-top:22px;">
+<h2 data-en="How will we walk with you?" data-zh="擺渡人會怎麼陪你？" style="text-align:left; margin: 0 0 10px 0;">擺渡人會怎麼陪你？</h2>
+<p data-en="What we value is not “doing more,” but “doing what’s right.”" data-zh="我們重視的不是「做得多」，而是「做得對」。" style="margin:0 0 12px 0;">我們重視的不是「做得多」，而是「做得對」。</p>
+<div class="steps">
+<div class="step">
+<div class="badge">A</div>
+<div>
+<h3 data-en="Start by listening" data-zh="先聽你的狀況">先聽你的狀況</h3>
+<p data-en="We don’t rush to push a package—we first understand what matters most to you." data-zh="不急著推方案，先理解你最在意的事。">不急著推方案，先理解你最在意的事。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">B</div>
+<div>
+<h3 data-en="Clear, transparent steps" data-zh="流程清楚透明">流程清楚透明</h3>
+<p data-en="What we do, and why we do it—each step is explained plainly." data-zh="每一步怎麼做、為什麼這樣做，都說明白。">每一步怎麼做、為什麼這樣做，都說明白。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">C</div>
+<div>
+<h3 data-en="A steady, calm on-site flow" data-zh="現場秩序穩定">現場秩序穩定</h3>
+<p data-en="We keep chaos outside so the farewell can proceed in quiet." data-zh="把混亂擋在外面，讓告別可以安靜進行。">把混亂擋在外面，讓告別可以安靜進行。</p>
+</div>
+</div>
+<div class="step">
+<div class="badge">D</div>
+<div>
+<h3 data-en="Respect for every family" data-zh="尊重每個家庭">尊重每個家庭</h3>
+<p data-en="No imposed form, no comparing scale, no rushing emotions." data-zh="不強加形式，不比較規模，不催促情緒。">不強加形式，不比較規模，不催促情緒。</p>
+</div>
+</div>
+</div>
+<div class="reminder" data-en='&lt;strong data-zh="一句話的提醒" data-en="A gentle reminder"&gt;A gentle reminder&lt;/strong&gt;&lt;br&gt;The meaning of a funeral has never been about grandeur,&lt;br&gt;but about making farewell feel supported, and giving longing a place to rest.' data-html="1" data-zh='&lt;strong data-en="A gentle reminder" data-zh="一句話的提醒"&gt;一句話的提醒&lt;/strong&gt;&lt;br/&gt;
+              喪禮的意義，從來不是盛大，&lt;br/&gt;
+              而是讓告別變得有依靠，讓思念有地方安放。'>
+<strong data-en="A gentle reminder" data-zh="一句話的提醒">一句話的提醒</strong><br/>
+              喪禮的意義，從來不是盛大，<br/>
+              而是讓告別變得有依靠，讓思念有地方安放。
+            </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div data-en="© 2025 The Ferryman Funeral Services. All rights reserved." data-zh="© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。">© 2025 擺渡人 FUNERAL SERVICES. 保留所有權利。</div>
+<div data-en="Professional life-ceremony services" data-zh="專業生命禮儀服務" style="margin-top:8px;">專業生命禮儀服務</div>
+</div>
+</footer>
+<script>
+
+
+    (function(){
+      const navList = document.getElementById("navList");
+      const menuBtn = document.getElementById("menuBtn");
+      const langBtn = document.getElementById("langBtn");
+
+      // Mobile menu toggle
+      function setMenu(open){
+        navList.classList.toggle("open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+      }
+
+      menuBtn?.addEventListener("click", () => {
+        const isOpen = navList.classList.contains("open");
+        setMenu(!isOpen);
+      });
+
+      // Close menu on link click (mobile)
+      navList?.addEventListener("click", (e) => {
+        const target = e.target;
+        if(target && target.tagName === "A"){
+          setMenu(false);
+        }
+      });
+
+      // Language toggle (default zh-Hant)
+      let current = "zh";
+      function applyLang(lang){
+        current = lang;
+        document.documentElement.lang = (lang === "zh") ? "zh-Hant" : "en";
+
+        const nodes = document.querySelectorAll("[data-zh][data-en]");
+        nodes.forEach(el => {
+          const val = el.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+          const htmlMode = el.hasAttribute("data-html");
+          if(htmlMode){
+            el.innerHTML = val;
+          }else{
+            el.textContent = val;
+          }
+        });
+
+        // Update button label
+        langBtn.textContent = (lang === "zh") ? "中 / EN" : "EN / 中";
+      }
+
+      langBtn?.addEventListener("click", () => {
+        applyLang(current === "zh" ? "en" : "zh");
+      });
+
+      applyLang("zh");
+    })();
+  
+  
+  </script>
+</body>
+</html>
