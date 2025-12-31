@@ -27,6 +27,14 @@ header{
   justify-content:space-between;
   padding:12px 20px;
 }
+
+/* ⭐ Logo */
+.logo{
+  height:72px;   /* 桌機尺寸 */
+  width:auto;
+  display:block;
+}
+到這裡，logo 已經確實交
 .menu-btn{
   display:none;
   padding:8px 12px;
