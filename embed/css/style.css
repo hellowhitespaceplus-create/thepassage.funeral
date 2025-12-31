@@ -1,195 +1,52 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>擺渡人 FUNERAL SERVICES</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-/* =================================================
-   Header / Navigation（含手機版）⭐
-   只留這一套，不要再有第二套
-================================================= */
-
 :root{
-  --primary:#141414;
-  --accent:#a67c52;
-  --text:#2f2f2f;
-  --muted:#6f6f6f;
-  --bg:#f6f1ea;
-  --panel:#fbf8f4;
-  --border:rgba(20,20,20,.10);
-  --nav-h:72px;
+  --bg:#0b0f14;
+  --panel:#0f1620;
+  --text:#eaf0f7;
+  --muted:#a9b6c6;
+  --line:rgba(255,255,255,.10);
+  --gold:#d6b26a;
+  --gold2:#f0d49b;
+  --shadow:0 18px 40px rgba(0,0,0,.45);
+  --r:18px;
+  --max:1120px;
 }
-
-/* Reset / Base */
-*{ box-sizing:border-box; }
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:"Noto Serif TC", serif;
-  background:var(--bg);
+  font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+  background:linear-gradient(180deg,#0b0f14,#05070a);
   color:var(--text);
+  line-height:1.8;
 }
-a{ color:inherit; text-decoration:none; }
-
-/* ---------- Header ---------- */
-
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:auto;padding:0 20px}
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(251,248,244,.78);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(166,124,82,.22);
+  position:sticky;top:0;
+  backdrop-filter:blur(10px);
+  background:rgba(8,12,18,.75);
+  border-bottom:1px solid var(--line);
 }
-
-.nav{
-  height:var(--nav-h);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.brand{font-weight:800;letter-spacing:.12em;font-size:14px}
+.menu a{margin-left:12px;font-size:13px;color:var(--muted)}
+.menu a.active,.menu a:hover{color:var(--text)}
+.page-head{padding:56px 0 26px}
+.page-head h1{margin:0;font-size:32px}
+.page-head p{color:var(--muted);max-width:720px}
+section{padding:26px 0}
+.card{
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  background:rgba(255,255,255,.03);
+  padding:22px;
+  box-shadow:var(--shadow);
 }
-
-.container{
-  width:min(1100px,92vw);
-  margin:0 auto;
-}
-
-.brand img{ height:42px; }
-
-/* Right side */
-.nav__right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-/* Buttons */
-.lang-btn,
-.menu-btn{
-  font-family:"Noto Sans TC", sans-serif;
-  font-weight:600;
-  font-size:.9rem;
-  padding:10px 12px;
-  border:1px solid var(--border);
-  background:#fff;
-  border-radius:999px;
-  cursor:pointer;
-}
-
-.menu-btn{ display:none; }
-
-/* Desktop nav */
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:14px;
-  margin:0;
-  padding:0;
-  align-items:center;
-  font-family:"Noto Sans TC", sans-serif;
-}
-
-nav a{
-  font-size:.9rem;
-  font-weight:600;
-  color:rgba(20,20,20,.72);
-}
-
-nav a:hover{ color:var(--accent); }
-
-/* ---------- Mobile ---------- */
-
-@media (max-width:1100px){
-
-  .menu-btn{ display:inline-flex; }
-
-  nav ul{
-    display:none;
-    position:absolute;
-    top:var(--nav-h);
-    left:0;
-    width:100%;
-    background:var(--panel);
-    flex-direction:column;
-    padding:16px 20px;
-    box-shadow:0 12px 28px rgba(0,0,0,.12);
-  }
-
-  nav ul.open{ display:flex; }
-
-  nav li{ width:100%; }
-
-  nav a{
-    display:block;
-    width:100%;
-    padding:12px 0;
-    font-size:1rem;
-  }
-}
-
-/* =================================================
-   以下是「內容用 CSS」（你原本的都可以放這）
-================================================= */
-
-main{ padding:60px 0; }
-section{ padding:60px 0; }
+.grid{display:grid;gap:18px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
 footer{
-  background:#141414;
-  color:#bdbdbd;
-  text-align:center;
-  padding:40px 0;
-  font-family:"Noto Sans TC", sans-serif;
+  border-top:1px solid var(--line);
+  padding:26px 0;
+  font-size:12px;
+  color:var(--muted);
 }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="container nav">
-    <a class="brand" href="#">
-      <img src="images/logo.png" alt="擺渡人 Logo">
-    </a>
-
-    <div class="nav__right">
-      <button class="lang-btn" id="langBtn">中 / EN</button>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false">選單</button>
-
-      <nav>
-        <ul id="navList">
-          <li><a href="index.html">首頁</a></li>
-          <li><a href="about.html">關於擺渡人</a></li>
-          <li><a href="services.html">服務項目</a></li>
-          <li><a href="contact.html">聯絡</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<main>
-  <section>
-    <div class="container">
-      <h1>擺渡人</h1>
-      <p>人生一程，終須一別。</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  © 2025 擺渡人 FUNERAL SERVICES
-</footer>
-
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const navList = document.getElementById("navList");
-
-  menuBtn.addEventListener("click", ()=>{
-    const open = navList.classList.toggle("open
